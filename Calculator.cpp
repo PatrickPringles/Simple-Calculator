@@ -6,13 +6,24 @@ int main()
     int num1, num2;
     char choice;
 
-    while(choice != '0')
+    cout << "---SIMPLE CALCULATOR---" << endl;
+    cout << "Created by Patrick F. Mendoza" << endl;
+
+    while (choice != '0')
     {
-        cout << "---SIMPLE CALCULATOR---" << endl;
-        cout << "Enter two numbers: ";
-        cin >> num1 >> num2;
         cout << "Enter your preferred operator: (+, -, *, /, %, 0 if exit)" << endl;
         cin >> choice;
+        
+        if (choice == '0')
+        {
+            cout << "Thank you for using my program. Terminating..." << endl;
+            break;
+        }
+
+        cout << "Enter first number: ";
+        cin >> num1;
+        cout << "Enter second number: ";
+        cin >> num2;
 
         switch (choice)
         {
@@ -31,15 +42,10 @@ int main()
             case '%':
                 cout << num1 << " % " << num2 << " = " << num1 % num2 << endl;
                 break;
-            case '0':
-                cout << "Terminating program..." << endl;
-                break;
             default:
                 cout << "Syntax Error" << endl;
                 break;
         }
-
-        system("pause");
     }
 
     return 0;
